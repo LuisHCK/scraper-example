@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180507205359) do
-
+ActiveRecord::Schema.define(version: 20180507211337) do
   create_table "pages", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -25,6 +24,8 @@ ActiveRecord::Schema.define(version: 20180507205359) do
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "page_id"
+    t.index ["page_id"], name: "index_tags_on_page_id"
   end
 
 end
