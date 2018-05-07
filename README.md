@@ -1,24 +1,29 @@
 # README
+This is a demonstration of an API-REST capable of scraping a web page using [Nokogiri](https://github.com/sparklemotion/nokogiri) and [jsonapi-resources](https://github.com/cerebris/jsonapi-resources)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Usage
+### - Scrape an URL
+```
+POST /api/v1/pages
 
-Things you may want to cover:
+# JSON payload
+{
+  "url": "https://example.com"  
+}
+```
+Note: Some pages can't be scraped
 
-* Ruby version
+### - View ALL scraped pages
 
-* System dependencies
+```
+GET /api/v1/pages
 
-* Configuration
+# Should return and Array of pages
+```
 
-* Database creation
+### - View a specific page by ID
+```
+# The ID can be any existing
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+GET /api/v1/1
+```
